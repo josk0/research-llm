@@ -82,7 +82,7 @@ venv\Scripts\activate
 Install required packages:
 
 pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118 \
-transformers datasets PyPDF2==3.0.1 pandas pysqlite3
+transformers datasets PyPDF2==3.0.1 pandas pysqlite3 markdowncleaner
 
 
 Ensure you have your LLaMA base model folder (\`Llama-3.2-1B-Instruct/\` in the example) placed within the same directory. You may need to adjust the folder name or path in \`llama_model.py\`.

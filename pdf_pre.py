@@ -1,4 +1,5 @@
 from PyPDF2 import PdfReader
+from markdowncleaner import MarkdownCleaner
 import re
 
 def extract_text_from_pdf(file_path):
@@ -16,7 +17,6 @@ def extract_text_from_pdf(file_path):
         return None
 
 def clean_text(text):
-    """Cleans extracted text."""
-    text = re.sub(r'\s+', ' ', text)  # Remove extra whitespace
-    text = re.sub(r'[^a-zA-Z0-9\s.,!?]', '', text)  # Remove unwanted characters
-    return text.strip()
+    """Cleans extracted text using markdowncleaner package with default configuration."""
+    cleaner = MarkdownCleaner()
+    return cleaner.clean_markdown_string(text)
